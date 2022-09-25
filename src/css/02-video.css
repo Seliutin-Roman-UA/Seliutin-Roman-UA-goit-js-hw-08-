@@ -1,0 +1,15 @@
+.wrapper {
+  margin-top: 10vh;
+  text-align: center;
+ 
+}
+#vimeo-player{
+ width: 640px;
+  height: 360px;
+}
+@media screen and (min-width: 1000px) {
+  #vimeo-player {
+    width: 960px;
+    height: 540px;
+  }
+}
