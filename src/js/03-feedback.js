@@ -7,7 +7,6 @@ const textarea = document.querySelector('textarea');
 const dataJSON = localStorage.getItem('feedback-form-state');
 const data = dataJSON === null ? {} : JSON.parse(dataJSON);
 
-
 function takeLocalStorage() {
   const { email: email = '', message: message = '' } = data;
   input.value = email;
@@ -15,17 +14,13 @@ function takeLocalStorage() {
 }
 
 function formNewLocalStorage(e) {
-  if (e.target.matches('input')) {
-    data.email = e.target.value;
-  }
-  if (e.target.matches('textarea')) {
-    data.message = e.target.value;
-  }
+  data.email = input.value;
+  data.message = textarea.value;
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
 }
 
 function cleaneFormAndLocalStorage(e) {
-     e.preventDefault();
+  e.preventDefault();
   if (input.value && textarea.value) {
     console.log('email = ', input.value);
     console.log('message = ', textarea.value);
