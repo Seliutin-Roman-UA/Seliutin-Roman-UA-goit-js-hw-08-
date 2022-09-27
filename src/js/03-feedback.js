@@ -13,7 +13,7 @@ function takeLocalStorage() {
   textarea.value = message;
 }
 
-function formNewLocalStorage(e) {
+function formNewLocalStorage() {
   data.email = input.value;
   data.message = textarea.value;
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
@@ -22,8 +22,7 @@ function formNewLocalStorage(e) {
 function cleaneFormAndLocalStorage(e) {
   e.preventDefault();
   if (input.value && textarea.value) {
-    console.log('email = ', input.value);
-    console.log('message = ', textarea.value);
+    console.log(data);
     localStorage.removeItem('feedback-form-state');
     formHTML.reset();
   }
